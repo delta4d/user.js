@@ -6,6 +6,7 @@
 // @match https://github.com/*
 // @run-at document-end
 // @grant none
+// @description add more items on navbar
 // ==/UserScript==
 
 // jshint esversion: 6
@@ -13,7 +14,7 @@
 'use strict';
 
 var addNavItem = (() => {
-    const nav = document.querySelector('[role="navigation"]');
+    const nav = document.querySelector(".HeaderMenu").getElementsByTagName('ul')[3];
     const cls = nav.firstElementChild.firstElementChild.className; // ul > li > a
 
     return (desc, addr) => {
@@ -31,3 +32,4 @@ var addNavItem = (() => {
 
 addNavItem("Stars", "/stars");
 addNavItem("Settings", "/settings");
+addNavItem("Discover", "/discover");
